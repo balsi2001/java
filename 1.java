@@ -40,9 +40,9 @@ class CCircle extends CShape     // 子類別 圓形CCircle
    String name;
    public CCircle(String name, double rate, int quantity)   //建構元
    {
-      this.name = this.getName();
-      this.rate = this.getRate();
-      this.quantity = quantity; 
+      name = this.getName();
+      rate = this.getRate();
+      quantity = quantity; 
    }
    public double calcPrice() {
          return (double)(quantity * this.rate);     
@@ -59,15 +59,14 @@ public class abstract_02
       double max=0;
       double t;
       for(int i = 0; i < 5; i++ ) {
-          t=Math.random()*1;
-          if(t>0.5){
+          if(Math.random()>0.5){
               shape1[i]=new CRectangle("Order",Math.random()*i+1,Math.random()*10+1);
               System.out.println("Order cake總價格: " + shape1[i].calcPrice());
           }
           else{
           shape1[i]=new CCircle("Ready",Math.random()*i+1,(int)Math.random()*10+1);
           System.out.println("Ready cake總價格: " + shape1[i].calcPrice());
-          System.out.println("數量: " + shape1[i].getqu());
+         // System.out.println("數量: " + shape1[i].quantity);
         }
         max = Math.max(max,shape1[i].calcPrice());
       }
